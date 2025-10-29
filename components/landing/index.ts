@@ -14,3 +14,4 @@ export { AboutSection, type AboutSectionProps, type Objective } from './about-se
 export { PillarsSection, type PillarsSectionProps, type Pillar } from './pillars-section';
 export { FundSection, type FundSectionProps, type FundStat } from './fund-section';
 export { PlatformSection, type PlatformSectionProps, type PlatformFeature } from './platform-section';
+export { ActivitiesSection, type ActivitiesSectionProps, type Activity } from './activities-section';

@@ -1,4 +1,4 @@
-import { HeroSection, AboutSection, PillarsSection, FundSection, PlatformSection } from "@/components/landing"
+import { HeroSection, AboutSection, PillarsSection, FundSection, PlatformSection, ActivitiesSection } from "@/components/landing"
 
 export default function HomePage() {
   const fundStats = [
@@ -36,6 +36,7 @@ export default function HomePage() {
         ctaHref="#apply-funding"
       />
       <PlatformSection />
+      <ActivitiesSection />
     </main>
   );
 }
