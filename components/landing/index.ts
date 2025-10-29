@@ -10,3 +10,4 @@ export { ScrollReveal, type ScrollRevealProps } from '@/components/ui/scroll-rev
 export { StatCounter, type StatCounterProps } from '@/components/ui/stat-counter';
 export { HeroSection } from './hero-section';
 export { AboutSection, type AboutSectionProps, type Objective } from './about-section';
+export { PillarsSection, type PillarsSectionProps, type Pillar } from './pillars-section';

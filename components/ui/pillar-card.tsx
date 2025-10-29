@@ -77,7 +77,7 @@ export const PillarCard = React.forwardRef<HTMLDivElement, PillarCardProps>(
         </div>
 
         {/* Default Overlay - Title */}
-        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-0">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-0">
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <div className="flex items-center gap-3">
               {Icon && (
@@ -118,6 +118,7 @@ export const PillarCard = React.forwardRef<HTMLDivElement, PillarCardProps>(
     if (href) {
       return (
         <a
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           ref={ref as any}
           href={href}
           className={cn(
