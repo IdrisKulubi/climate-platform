@@ -98,6 +98,7 @@ export function ActivitiesSection({ activities = defaultActivities }: Activities
 
   return (
     <section
+      id="activities"
       className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-background touch-pan-y"
       aria-labelledby="activities-heading"
     >

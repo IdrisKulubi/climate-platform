@@ -55,7 +55,7 @@ export function FooterSection({
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const ctaContainerRef = useRef<HTMLDivElement>(null);
-  const newsletterRef = useRef<HTMLDivElement>(null);
+  const footerGridRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
   
   const [email, setEmail] = useState('');
@@ -70,7 +70,7 @@ export function FooterSection({
       const elements = [
         headingRef.current,
         ctaContainerRef.current,
-        newsletterRef.current,
+        footerGridRef.current,
         logoRef.current,
       ].filter(Boolean);
 
@@ -88,7 +88,7 @@ export function FooterSection({
       const elements = [
         headingRef.current,
         ctaContainerRef.current,
-        newsletterRef.current,
+        footerGridRef.current,
         logoRef.current,
       ].filter(Boolean);
       
@@ -125,13 +125,14 @@ export function FooterSection({
 
   return (
     <footer
+      id="contact"
       ref={sectionRef}
-      className="relative bg-linear-to-br from-climate-green-light/20 via-climate-green-light/10 to-neutral-off-white py-6 sm:py-8 md:py-10 touch-pan-y"
+      className="relative bg-linear-to-br from-climate-green-light/20 via-climate-green-light/10 to-neutral-off-white py-12 sm:py-16 md:py-20 touch-pan-y"
       aria-label="Footer section"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main CTA Section */}
-        <div className="max-w-4xl mx-auto text-center mb-6 sm:mb-8">
+        <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16">
           <h2
             ref={headingRef}
             className="text-lg sm:text-xl md:text-2xl font-heading font-bold text-climate-green mb-3 sm:mb-4 px-4"
@@ -160,17 +161,17 @@ export function FooterSection({
           </div>
         </div>
 
-        {/* Footer Bottom Section */}
+        {/* Footer Content Grid */}
         <div
-          ref={logoRef}
-          className="border-t border-climate-green/20 pt-3 sm:pt-4"
+          ref={footerGridRef}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
-            {/* Logo and Copyright */}
+          {/* Company Info */}
+          <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="relative w-8 h-8 sm:w-10 sm:h-10">
+              <div className="relative w-10 h-10">
                 <Image
-                  src="/images/logos/kcic-logo.svg"
+                  src="/images/logos/kcic-logo.png"
                   alt="KCIC"
                   fill
                   className="object-contain"
@@ -181,17 +182,15 @@ export function FooterSection({
                   }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-sm sm:text-base font-heading font-bold text-climate-green">
+                  <span className="text-base font-heading font-bold text-climate-green">
                     KCIC
                   </span>
                 </div>
               </div>
-              <p className="text-xs text-neutral-brown-gray">
-                © {new Date().getFullYear()} KCIC
-              </p>
             </div>
-
-            {/* Social Media Links */}
+            <p className="text-sm text-neutral-brown-gray leading-relaxed">
+              Driving climate innovation across Africa through collaboration, investment, and sustainable solutions for a greener future.
+            </p>
             <div className="flex items-center gap-2">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
@@ -201,7 +200,7 @@ export function FooterSection({
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-climate-green/10 hover:bg-partner-agra hover:text-white text-climate-green flex items-center justify-center transition-all duration-300 touch-manipulation"
+                    className="w-9 h-9 rounded-full bg-climate-green/10 hover:bg-partner-agra hover:text-white text-climate-green flex items-center justify-center transition-all duration-300 touch-manipulation"
                     aria-label={`Visit our ${social.platform} page`}
                   >
                     <Icon className="w-4 h-4" />
@@ -211,17 +210,89 @@ export function FooterSection({
             </div>
           </div>
 
-          {/* Additional Links */}
-          <div className="mt-3 pt-3 border-t border-climate-green/10">
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs text-neutral-brown-gray">
-              <a href="#privacy" className="hover:text-climate-green transition-colors touch-manipulation">
-                Privacy
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h3 className="text-base font-heading font-semibold text-climate-green">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><a href="#about" className="text-sm text-neutral-brown-gray hover:text-climate-green transition-colors">About Us</a></li>
+              <li><a href="#pillars" className="text-sm text-neutral-brown-gray hover:text-climate-green transition-colors">Our Pillars</a></li>
+              <li><a href="#activities" className="text-sm text-neutral-brown-gray hover:text-climate-green transition-colors">Activities</a></li>
+              <li><a href="#fund" className="text-sm text-neutral-brown-gray hover:text-climate-green transition-colors">Climate Fund</a></li>
+              <li><a href="#platform" className="text-sm text-neutral-brown-gray hover:text-climate-green transition-colors">Innovation Platform</a></li>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div className="space-y-4">
+            <h3 className="text-base font-heading font-semibold text-climate-green">Support</h3>
+            <ul className="space-y-2">
+              <li><a href="#help" className="text-sm text-neutral-brown-gray hover:text-climate-green transition-colors">Help Center</a></li>
+              <li><a href="#contact" className="text-sm text-neutral-brown-gray hover:text-climate-green transition-colors">Contact Us</a></li>
+              <li><a href="#faq" className="text-sm text-neutral-brown-gray hover:text-climate-green transition-colors">FAQ</a></li>
+              <li><a href="#privacy" className="text-sm text-neutral-brown-gray hover:text-climate-green transition-colors">Privacy Policy</a></li>
+              <li><a href="#terms" className="text-sm text-neutral-brown-gray hover:text-climate-green transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div className="space-y-4">
+            <h3 className="text-base font-heading font-semibold text-climate-green">Stay Updated</h3>
+            <p className="text-sm text-neutral-brown-gray">
+              Get the latest climate innovation news and opportunities delivered to your inbox.
+            </p>
+            <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+              <div className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1"
+                  disabled={isSubmitting}
+                />
+                <Button
+                  type="submit"
+                  size="sm"
+                  disabled={isSubmitting}
+                  className="bg-climate-green hover:bg-partner-agra text-white px-4"
+                >
+                  {isSubmitting ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Mail className="w-4 h-4" />
+                  )}
+                </Button>
+              </div>
+              {submitMessage && (
+                <p className={`text-xs ${submitMessage.includes('Thank you') ? 'text-green-600' : 'text-red-600'}`}>
+                  {submitMessage}
+                </p>
+              )}
+            </form>
+          </div>
+        </div>
+
+        {/* Footer Bottom Section */}
+        <div
+          ref={logoRef}
+          className="border-t border-climate-green/20 pt-6"
+        >
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Copyright */}
+            <p className="text-sm text-neutral-brown-gray">
+              © {new Date().getFullYear()} Kenya Climate Innovation Centre. All rights reserved.
+            </p>
+
+            {/* Additional Links */}
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-neutral-brown-gray">
+              <a href="#accessibility" className="hover:text-climate-green transition-colors touch-manipulation">
+                Accessibility
               </a>
-              <a href="#terms" className="hover:text-climate-green transition-colors touch-manipulation">
-                Terms
+              <a href="#cookies" className="hover:text-climate-green transition-colors touch-manipulation">
+                Cookies
               </a>
-              <a href="#contact" className="hover:text-climate-green transition-colors touch-manipulation">
-                Contact
+              <a href="#sitemap" className="hover:text-climate-green transition-colors touch-manipulation">
+                Sitemap
               </a>
             </div>
           </div>

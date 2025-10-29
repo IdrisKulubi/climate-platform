@@ -1,4 +1,5 @@
 import { HeroSection, AboutSection, PillarsSection, FundSection, PlatformSection, ActivitiesSection, FooterSection } from "@/components/landing"
+import { Navbar } from "@/components/navigation"
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -61,6 +62,7 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <Navbar />
       <main className="min-h-screen">
         <HeroSection />
         <AboutSection />

@@ -53,6 +53,7 @@ const defaultObjectives: Objective[] = [
 export function AboutSection({ objectives = defaultObjectives }: AboutSectionProps) {
   return (
     <section
+      id="about"
       className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-neutral-off-white touch-pan-y"
       aria-labelledby="about-heading"
     >

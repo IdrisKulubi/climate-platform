@@ -63,6 +63,7 @@ export const FundSection = React.forwardRef<HTMLElement, FundSectionProps>(
   ) => {
     return (
       <section
+        id="fund"
         ref={ref}
         className={cn(
           "relative min-h-[500px] sm:min-h-[600px] w-full overflow-hidden py-12 sm:py-16 md:py-20 lg:py-28 xl:py-32 touch-pan-y",

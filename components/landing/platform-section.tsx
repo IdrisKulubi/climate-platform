@@ -110,6 +110,7 @@ export const PlatformSection = React.forwardRef<HTMLElement, PlatformSectionProp
 
     return (
       <section
+        id="platform"
         ref={ref}
         className={cn(
           'relative py-12 sm:py-16 md:py-24 lg:py-32 bg-background overflow-hidden touch-pan-y',
