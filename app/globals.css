@@ -9,27 +9,27 @@
   --font-sans: var(--font-sans);
   --font-heading: var(--font-heading);
   --font-mono: var(--font-geist-mono);
-  
+
   /* Climate colors */
   --color-climate-green: var(--climate-green);
   --color-climate-green-light: var(--climate-green-light);
   --color-climate-green-dark: var(--climate-green-dark);
   --color-climate-blue: var(--climate-blue);
   --color-climate-yellow: var(--climate-yellow);
-  
+
   /* Partner colors */
   --color-partner-afdb: var(--partner-afdb);
   --color-partner-ifc: var(--partner-ifc);
   --color-partner-unep: var(--partner-unep);
   --color-partner-wri: var(--partner-wri);
   --color-partner-agra: var(--partner-agra);
-  
+
   /* Neutral colors */
   --color-neutral-off-white: var(--neutral-off-white);
   --color-neutral-brown-gray: var(--neutral-brown-gray);
   --color-neutral-white: var(--neutral-white);
   --color-neutral-black: var(--neutral-black);
-  
+
   /* Existing shadcn colors */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -68,27 +68,27 @@
 
 :root {
   --radius: 0.625rem;
-  
-  /* Climate Platform Colors */
-  --climate-green: #1E5631;
-  --climate-green-light: #A7C957;
-  --climate-green-dark: #0F2B19;
-  --climate-blue: #2C5F7F;
-  --climate-yellow: #F3B229;
-  
+
+  /* Climate Platform Colors - KCIC Green #62AD4A */
+  --climate-green: #62ad4a;
+  --climate-green-light: #7bc765;
+  --climate-green-dark: #4d8a3a;
+  --climate-blue: #2c5f7f;
+  --climate-yellow: #f3b229;
+
   /* Partner Organization Colors */
   --partner-afdb: #006633;
-  --partner-ifc: #003C70;
-  --partner-unep: #009EDB;
-  --partner-wri: #F3B229;
-  --partner-agra: #F15A22;
-  
+  --partner-ifc: #003c70;
+  --partner-unep: #009edb;
+  --partner-wri: #f3b229;
+  --partner-agra: #f15a22;
+
   /* Neutral Colors */
-  --neutral-off-white: #F5F9F6;
-  --neutral-brown-gray: #555B6E;
-  --neutral-white: #FFFFFF;
-  --neutral-black: #0A0A0A;
-  
+  --neutral-off-white: #f5f9f6;
+  --neutral-brown-gray: #555b6e;
+  --neutral-white: #ffffff;
+  --neutral-black: #0a0a0a;
+
   /* Base theme colors - using climate green as primary */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -96,18 +96,18 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #1E5631;
-  --primary-foreground: #FFFFFF;
-  --secondary: #A7C957;
-  --secondary-foreground: #0A0A0A;
-  --muted: #F5F9F6;
-  --muted-foreground: #555B6E;
-  --accent: #F3B229;
-  --accent-foreground: #0A0A0A;
+  --primary: #62ad4a;
+  --primary-foreground: #ffffff;
+  --secondary: #7bc765;
+  --secondary-foreground: #0a0a0a;
+  --muted: #f5f9f6;
+  --muted-foreground: #555b6e;
+  --accent: #f3b229;
+  --accent-foreground: #0a0a0a;
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: #1E5631;
+  --ring: #62ad4a;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -167,7 +167,12 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
   h1 {
@@ -182,28 +187,32 @@
   body {
     @apply text-sm sm:text-base leading-relaxed;
   }
-  
+
   /* Touch optimization */
-  button, a, [role="button"] {
+  button,
+  a,
+  [role="button"] {
     touch-action: manipulation;
   }
-  
+
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
-  
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
     }
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
   }
-  
+
   /* Mobile viewport height fix */
   @supports (height: 100dvh) {
     .min-h-screen {
