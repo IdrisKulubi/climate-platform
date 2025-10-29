@@ -1,0 +1,20 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E5631;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2C5F7F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A7C957;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#heroGradient)"/>
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  <text x="960" y="540" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle" opacity="0.3">
+    Africa Climate Platform Hero Image
+  </text>
+  <text x="960" y="600" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle" opacity="0.3">
+    Replace with actual hero image (1920x1080px)
+  </text>
+</svg>

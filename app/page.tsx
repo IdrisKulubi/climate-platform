@@ -1,12 +1,10 @@
-import { ModeToggle } from "@/components/themes/mode-toggle"
+import { HeroSection, AboutSection } from "@/components/landing"
 
 export default function HomePage() {
-
-
   return (
-    <>
-      <ModeToggle />
-      <div>Welcome to the Climate Platform!</div>
-    </>
+    <main className="min-h-screen">
+      <HeroSection />
+      <AboutSection />
+    </main>
   );
 }

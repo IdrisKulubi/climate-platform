@@ -8,3 +8,5 @@ export { ObjectiveCard, type ObjectiveCardProps } from '@/components/ui/objectiv
 export { PillarCard, type PillarCardProps } from '@/components/ui/pillar-card';
 export { ScrollReveal, type ScrollRevealProps } from '@/components/ui/scroll-reveal';
 export { StatCounter, type StatCounterProps } from '@/components/ui/stat-counter';
+export { HeroSection } from './hero-section';
+export { AboutSection, type AboutSectionProps, type Objective } from './about-section';
