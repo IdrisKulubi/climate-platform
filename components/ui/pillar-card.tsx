@@ -72,22 +72,23 @@ export const PillarCard = React.forwardRef<HTMLDivElement, PillarCardProps>(
             alt={imageAlt || title}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
 
         {/* Default Overlay - Title */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-0">
-          <div className="absolute bottom-0 left-0 right-0 p-6">
-            <div className="flex items-center gap-3">
+        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-0">
+          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+            <div className="flex items-center gap-2 sm:gap-3">
               {Icon && (
                 <Icon
-                  size={24}
-                  className="text-white shrink-0"
+                  size={20}
+                  className="text-white shrink-0 sm:w-6 sm:h-6"
                   aria-hidden="true"
                 />
               )}
-              <h3 className="text-xl font-bold text-white leading-tight md:text-2xl">
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight">
                 {title}
               </h3>
             </div>
@@ -96,18 +97,18 @@ export const PillarCard = React.forwardRef<HTMLDivElement, PillarCardProps>(
 
         {/* Hover Overlay - Description */}
         <div className="absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          <div className="flex h-full flex-col items-center justify-center p-6 text-center">
+          <div className="flex h-full flex-col items-center justify-center p-4 sm:p-6 text-center">
             {Icon && (
               <Icon
-                size={32}
-                className="mb-4 text-white"
+                size={28}
+                className="mb-3 sm:mb-4 text-white sm:w-8 sm:h-8"
                 aria-hidden="true"
               />
             )}
-            <h3 className="mb-3 text-xl font-bold text-white md:text-2xl">
+            <h3 className="mb-2 sm:mb-3 text-lg sm:text-xl md:text-2xl font-bold text-white">
               {title}
             </h3>
-            <p className="text-sm text-white/90 md:text-base">
+            <p className="text-xs sm:text-sm md:text-base text-white/90 leading-relaxed">
               {description}
             </p>
           </div>
@@ -122,7 +123,7 @@ export const PillarCard = React.forwardRef<HTMLDivElement, PillarCardProps>(
           ref={ref as any}
           href={href}
           className={cn(
-            'group relative overflow-hidden rounded-lg aspect-4/3 transition-all duration-300',
+            'group relative overflow-hidden rounded-lg aspect-4/3 transition-all duration-300 touch-manipulation',
             'cursor-pointer hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
             className
           )}
@@ -138,7 +139,7 @@ export const PillarCard = React.forwardRef<HTMLDivElement, PillarCardProps>(
         onClick={onClick}
         className={cn(
           'group relative overflow-hidden rounded-lg aspect-4/3 transition-all duration-300',
-          isInteractive && 'cursor-pointer hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+          isInteractive && 'cursor-pointer hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 touch-manipulation',
           className
         )}
         tabIndex={isInteractive ? 0 : undefined}

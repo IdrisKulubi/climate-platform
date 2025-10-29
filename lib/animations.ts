@@ -17,6 +17,7 @@ export interface ScrollRevealOptions {
   scrub?: boolean | number;
   markers?: boolean;
   once?: boolean;
+  delay?: number;
   animation?: {
     from?: gsap.TweenVars;
     to?: gsap.TweenVars;
@@ -93,6 +94,7 @@ export const createScrollReveal = (
       markers: config.markers,
       once: config.once,
     },
+    delay: config.delay || 0,
   });
 
   timeline.fromTo(

@@ -55,3 +55,7 @@ export {
 //   type MapSectionProps,
 //   type RegionData,
 // } from "./map-section";
+export {
+  FooterSection,
+  type FooterSectionProps,
+} from "./footer-section";

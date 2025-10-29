@@ -55,7 +55,7 @@ export const ObjectiveCard = React.forwardRef<HTMLDivElement, ObjectiveCardProps
       <div
         ref={ref}
         className={cn(
-          'group relative flex flex-col items-center gap-3 rounded-lg border bg-card p-6 text-center shadow-sm transition-all duration-300',
+          'group relative flex flex-col items-center gap-2 sm:gap-3 rounded-lg border bg-card p-3 sm:p-4 md:p-6 text-center shadow-sm transition-all duration-300 touch-manipulation',
           'hover:scale-105 hover:shadow-md',
           'focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2',
           className
@@ -64,7 +64,7 @@ export const ObjectiveCard = React.forwardRef<HTMLDivElement, ObjectiveCardProps
       >
         <div
           className={cn(
-            'flex items-center justify-center rounded-full p-3 transition-transform duration-300 group-hover:scale-110'
+            'flex items-center justify-center rounded-full p-2 sm:p-3 transition-transform duration-300 group-hover:scale-110'
           )}
           style={{
             backgroundColor: iconBgColor || 'hsl(var(--primary) / 0.1)',
@@ -72,7 +72,7 @@ export const ObjectiveCard = React.forwardRef<HTMLDivElement, ObjectiveCardProps
         >
           <Icon
             size={iconSize}
-            className="transition-colors duration-300"
+            className="transition-colors duration-300 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"
             style={{
               color: iconColor || 'hsl(var(--primary))',
             }}
@@ -80,11 +80,11 @@ export const ObjectiveCard = React.forwardRef<HTMLDivElement, ObjectiveCardProps
           />
         </div>
         <div className="space-y-1">
-          <h3 className="font-semibold leading-tight text-card-foreground">
+          <h3 className="text-xs sm:text-sm md:text-base font-semibold leading-tight text-card-foreground">
             {title}
           </h3>
           {description && (
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground hidden sm:block">
               {description}
             </p>
           )}

@@ -65,7 +65,7 @@ export const FundSection = React.forwardRef<HTMLElement, FundSectionProps>(
       <section
         ref={ref}
         className={cn(
-          "relative min-h-[600px] w-full overflow-hidden py-20 md:py-28 lg:py-32",
+          "relative min-h-[500px] sm:min-h-[600px] w-full overflow-hidden py-12 sm:py-16 md:py-20 lg:py-28 xl:py-32 touch-pan-y",
           className
         )}
         {...props}
@@ -78,6 +78,7 @@ export const FundSection = React.forwardRef<HTMLElement, FundSectionProps>(
             fill
             className="object-cover"
             priority={false}
+            loading="lazy"
             sizes="100vw"
           />
           {/* Dark overlay for text readability */}
@@ -87,21 +88,21 @@ export const FundSection = React.forwardRef<HTMLElement, FundSectionProps>(
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="mb-12 text-center md:mb-16">
-            <h2 className="mb-4 text-white">{title}</h2>
+          <div className="mb-8 sm:mb-12 md:mb-16 text-center">
+            <h2 className="mb-3 sm:mb-4 text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{title}</h2>
             {description && (
-              <p className="mx-auto max-w-3xl text-lg text-white/90 md:text-xl">
+              <p className="mx-auto max-w-3xl text-base sm:text-lg md:text-xl text-white/90 px-4">
                 {description}
               </p>
             )}
           </div>
 
           {/* Stats Grid */}
-          <div className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+          <div className="mb-8 sm:mb-12 grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="rounded-lg bg-white/10 p-6 backdrop-blur-sm transition-all hover:bg-white/15"
+                className="rounded-lg bg-white/10 p-4 sm:p-6 backdrop-blur-sm transition-all hover:bg-white/15 touch-manipulation"
               >
                 <StatCounter
                   value={stat.value}
@@ -118,11 +119,11 @@ export const FundSection = React.forwardRef<HTMLElement, FundSectionProps>(
           </div>
 
           {/* CTA Button */}
-          <div className="flex justify-center">
+          <div className="flex justify-center px-4">
             <Button
               asChild
               size="lg"
-              className="bg-partner-wri text-black hover:bg-partner-wri/90 hover:scale-105 transition-all duration-300 text-lg px-8 py-6 font-semibold"
+              className="bg-partner-wri text-black hover:bg-partner-wri/90 hover:scale-105 transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 font-semibold w-full sm:w-auto touch-manipulation"
             >
               <a href={ctaHref}>{ctaLabel}</a>
             </Button>

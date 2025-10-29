@@ -1,4 +1,4 @@
-import { HeroSection, AboutSection, PillarsSection, FundSection, PlatformSection, ActivitiesSection, MapSection } from "@/components/landing"
+import { HeroSection, AboutSection, PillarsSection, FundSection, PlatformSection, ActivitiesSection, FooterSection } from "@/components/landing"
 
 export default function HomePage() {
   const fundStats = [
@@ -37,7 +37,7 @@ export default function HomePage() {
       />
       <PlatformSection />
       <ActivitiesSection />
-      <MapSection />
+      <FooterSection />
     </main>
   );
 }

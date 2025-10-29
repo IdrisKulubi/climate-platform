@@ -61,7 +61,7 @@ export const ActivityCard = React.forwardRef<HTMLDivElement, ActivityCardProps>(
           className={cn(
             'relative flex flex-col h-full overflow-hidden rounded-lg border bg-card shadow-sm',
             'transition-all duration-300 ease-out',
-            'hover:-translate-y-2 hover:shadow-xl',
+            'hover:-translate-y-2 hover:shadow-xl touch-manipulation',
             'focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2',
             className
           )}
@@ -74,6 +74,7 @@ export const ActivityCard = React.forwardRef<HTMLDivElement, ActivityCardProps>(
               alt={title}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
             {/* AGRA orange accent overlay on hover */}
@@ -84,7 +85,7 @@ export const ActivityCard = React.forwardRef<HTMLDivElement, ActivityCardProps>(
           </div>
 
           {/* Content */}
-          <div className="flex flex-1 flex-col gap-2 p-5">
+          <div className="flex flex-1 flex-col gap-2 p-4 sm:p-5">
             {date && (
               <span 
                 className="text-xs font-medium uppercase tracking-wide"
@@ -93,10 +94,10 @@ export const ActivityCard = React.forwardRef<HTMLDivElement, ActivityCardProps>(
                 {date}
               </span>
             )}
-            <h3 className="text-lg font-semibold leading-tight text-card-foreground group-hover:text-primary transition-colors">
+            <h3 className="text-base sm:text-lg font-semibold leading-tight text-card-foreground group-hover:text-primary transition-colors">
               {title}
             </h3>
-            <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed flex-1">
               {description}
             </p>
           </div>

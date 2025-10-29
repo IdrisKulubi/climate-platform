@@ -53,28 +53,28 @@ const defaultObjectives: Objective[] = [
 export function AboutSection({ objectives = defaultObjectives }: AboutSectionProps) {
   return (
     <section
-      className="relative py-16 md:py-24 lg:py-32 bg-neutral-off-white"
+      className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-neutral-off-white touch-pan-y"
       aria-labelledby="about-heading"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Split-screen layout: text left, cards right on desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Left side: About text */}
           <ScrollReveal direction="left" duration={0.8}>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <h2
                 id="about-heading"
-                className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-900 dark:text-gray-500"
               >
                 About the Platform
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
                 The Africa Climate Platform is a comprehensive ecosystem designed to 
                 accelerate climate action across the continent. We bring together 
                 innovators, investors, and partners to create lasting impact through 
                 five core objectives.
               </p>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                 By mobilizing resources, fostering innovation, and building strategic 
                 partnerships, we&apos;re creating a sustainable future for Africa&apos;s climate 
                 economy.
@@ -89,7 +89,7 @@ export function AboutSection({ objectives = defaultObjectives }: AboutSectionPro
               duration={0.8}
               stagger={0.15}
               animateChildren
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6"
+              className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6"
             >
               {objectives.map((objective, index) => (
                 <ObjectiveCard

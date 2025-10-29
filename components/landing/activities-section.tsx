@@ -98,19 +98,19 @@ export function ActivitiesSection({ activities = defaultActivities }: Activities
 
   return (
     <section
-      className="relative py-16 md:py-24 lg:py-32 bg-background"
+      className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-background touch-pan-y"
       aria-labelledby="activities-heading"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <ScrollReveal direction="up" duration={0.8} className="mb-12 text-center">
+        <ScrollReveal direction="up" duration={0.8} className="mb-8 sm:mb-12 text-center">
           <h2
             id="activities-heading"
-            className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-3 sm:mb-4"
           >
             Flagship Activities
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Explore our key programs and initiatives designed to accelerate climate action and innovation across Africa.
           </p>
         </ScrollReveal>
@@ -122,7 +122,7 @@ export function ActivitiesSection({ activities = defaultActivities }: Activities
             duration={0.8}
             stagger={0.15}
             animateChildren
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
           >
             {activities.map((activity, index) => (
               <ActivityCard
@@ -141,12 +141,12 @@ export function ActivitiesSection({ activities = defaultActivities }: Activities
         <div className="md:hidden">
           <div className="relative">
             {/* Carousel Container */}
-            <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex gap-4">
+            <div className="overflow-hidden touch-pan-x" ref={emblaRef}>
+              <div className="flex gap-3 sm:gap-4">
                 {activities.map((activity, index) => (
                   <div
                     key={index}
-                    className="flex-[0_0_85%] min-w-0"
+                    className="flex-[0_0_85%] sm:flex-[0_0_80%] min-w-0"
                   >
                     <ActivityCard
                       title={activity.title}
@@ -161,19 +161,19 @@ export function ActivitiesSection({ activities = defaultActivities }: Activities
             </div>
 
             {/* Navigation Buttons */}
-            <div className="flex items-center justify-center gap-2 mt-6">
+            <div className="flex items-center justify-center gap-2 mt-4 sm:mt-6">
               <Button
                 variant="outline"
                 size="icon"
                 onClick={scrollPrev}
                 disabled={!canScrollPrev}
                 className={cn(
-                  'h-10 w-10 rounded-full',
+                  'h-9 w-9 sm:h-10 sm:w-10 rounded-full touch-manipulation',
                   !canScrollPrev && 'opacity-50 cursor-not-allowed'
                 )}
                 aria-label="Previous activity"
               >
-                <ChevronLeft className="h-5 w-5" />
+                <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
               <Button
                 variant="outline"
@@ -181,12 +181,12 @@ export function ActivitiesSection({ activities = defaultActivities }: Activities
                 onClick={scrollNext}
                 disabled={!canScrollNext}
                 className={cn(
-                  'h-10 w-10 rounded-full',
+                  'h-9 w-9 sm:h-10 sm:w-10 rounded-full touch-manipulation',
                   !canScrollNext && 'opacity-50 cursor-not-allowed'
                 )}
                 aria-label="Next activity"
               >
-                <ChevronRight className="h-5 w-5" />
+                <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </div>
           </div>

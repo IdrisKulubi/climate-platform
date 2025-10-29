@@ -112,7 +112,7 @@ export const PlatformSection = React.forwardRef<HTMLElement, PlatformSectionProp
       <section
         ref={ref}
         className={cn(
-          'relative py-16 md:py-24 lg:py-32 bg-background overflow-hidden',
+          'relative py-12 sm:py-16 md:py-24 lg:py-32 bg-background overflow-hidden touch-pan-y',
           className
         )}
         aria-labelledby="platform-heading"
@@ -138,22 +138,22 @@ export const PlatformSection = React.forwardRef<HTMLElement, PlatformSectionProp
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
-          <ScrollReveal direction="up" duration={0.8} className="mb-4 text-center">
+          <ScrollReveal direction="up" duration={0.8} className="mb-8 sm:mb-12 text-center">
             <h2
               id="platform-heading"
-              className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-3 sm:mb-4"
             >
               {title}
             </h2>
             {description && (
-              <p className="mx-auto max-w-3xl text-lg md:text-xl text-muted-foreground">
+              <p className="mx-auto max-w-3xl text-base sm:text-lg md:text-xl text-muted-foreground px-4">
                 {description}
               </p>
             )}
           </ScrollReveal>
 
           {/* Features Grid with Hover Effect */}
-          <HoverEffect items={hoverItems} className="gap-6 lg:gap-8" />
+          <HoverEffect items={hoverItems} className="gap-4 sm:gap-6 lg:gap-8" />
         </div>
       </section>
     );

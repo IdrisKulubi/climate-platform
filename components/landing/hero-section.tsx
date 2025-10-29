@@ -102,7 +102,7 @@ export function HeroSection({
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-dvh md:min-h-screen flex items-center justify-center overflow-hidden touch-pan-y"
       aria-label="Hero section"
     >
       {/* Parallax Background */}
@@ -126,12 +126,12 @@ export function HeroSection({
       <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-black/60" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-32">
         <div className="max-w-5xl mx-auto text-center">
           {/* Title */}
           <h1
             ref={titleRef}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-4 sm:mb-6 leading-tight px-2"
           >
             {title}
           </h1>
@@ -139,7 +139,7 @@ export function HeroSection({
           {/* Subtitle */}
           <p
             ref={subtitleRef}
-            className="text-lg sm:text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed px-2"
           >
             {subtitle}
           </p>
@@ -147,7 +147,7 @@ export function HeroSection({
           {/* CTA Buttons */}
           <div
             ref={ctaContainerRef}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-4 sm:px-0"
           >
             {ctaButtons.map((cta, index) => (
               <Button
@@ -157,11 +157,11 @@ export function HeroSection({
                 variant={cta.variant === 'primary' ? 'default' : 'outline'}
                 className={
                   cta.variant === 'primary'
-                    ? 'bg-climate-green hover:bg-climate-green-dark text-white transition-all duration-300 hover:scale-105 hover:shadow-lg min-w-[200px]'
-                    : 'bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 hover:shadow-lg min-w-[200px]'
+                    ? 'bg-climate-green hover:bg-climate-green-dark text-white transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto sm:min-w-[200px] touch-manipulation'
+                    : 'bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto sm:min-w-[200px] touch-manipulation'
                 }
               >
-                <a href={cta.href} className="flex items-center gap-2">
+                <a href={cta.href} className="flex items-center justify-center gap-2 w-full">
                   {cta.label}
                   <ArrowRight className="w-4 h-4" />
                 </a>
@@ -171,8 +171,8 @@ export function HeroSection({
         </div>
       </div>
 
-      {/* Scroll indicator (optional) */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      {/* Scroll indicator (hidden on mobile) */}
+      <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
           <div className="w-1.5 h-3 bg-white/70 rounded-full" />
         </div>
