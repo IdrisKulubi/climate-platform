@@ -21,7 +21,7 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({
-  title = 'Accelerating African Climate Solutions through Innovation, Investment, and Impact',
+  title = 'Accelerating African Climate Entrepreneurship through Innovation, Investment and Impact',
   subtitle = 'Join the movement to mobilize green finance, accelerate climate innovation, and foster collaboration across Africa',
   backgroundImage = '/images/hero/africa-climate-hero.jpg',
   ctaButtons = [
