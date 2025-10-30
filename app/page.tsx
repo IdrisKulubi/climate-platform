@@ -50,7 +50,7 @@ export default function HomePage() {
       label: "commercialization rate of supported enterprises",
     },
     {
-      value: 55,
+      value: 100,
       prefix: "$",
       suffix: "M",
       label: "mobilized in climate finance across Africa",
