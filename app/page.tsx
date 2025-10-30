@@ -1,4 +1,4 @@
-import { HeroSection, AboutSection, PillarsSection, FundSection, PlatformSection, ActivitiesSection, FooterSection } from "@/components/landing"
+import { HeroSection, AboutSection, PillarsSection, FundSection, ImpactMapSection, PlatformSection, ActivitiesSection, FooterSection } from "@/components/landing"
 import { Navbar } from "@/components/navigation"
 
 const structuredData = {
@@ -73,6 +73,7 @@ export default function HomePage() {
           backgroundImage="/images/fund/african-renewable-energy.jpg"
           ctaHref="#apply-funding"
         />
+        <ImpactMapSection />
         <PlatformSection />
         <ActivitiesSection />
         <FooterSection />

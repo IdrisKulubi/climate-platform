@@ -50,11 +50,11 @@ export {
   type ActivitiesSectionProps,
   type Activity,
 } from "./activities-section";
-// export {
-//   MapSection,
-//   type MapSectionProps,
-//   type RegionData,
-// } from "./map-section";
+export {
+  ImpactMapSection,
+  type ImpactMapSectionProps,
+  type ImpactStat,
+} from "./impact-map-section";
 export {
   FooterSection,
   type FooterSectionProps,
