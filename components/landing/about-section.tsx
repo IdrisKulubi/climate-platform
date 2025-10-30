@@ -1,16 +1,17 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import { 
-  DollarSign, 
-  Lightbulb, 
-  Scale, 
-  Users, 
+import { useRef, useEffect } from "react";
+import {
+  DollarSign,
+  Lightbulb,
+  Scale,
+  Users,
   BarChart3,
-  type LucideIcon 
-} from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  BookOpen,
+  type LucideIcon,
+} from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,36 +28,42 @@ export interface AboutSectionProps {
 const defaultObjectives: Objective[] = [
   {
     icon: DollarSign,
-    title: 'Mobilize Green Finance',
-    description: 'Connect climate SMEs with investors and funding opportunities',
+    title: "Mobilize Green Finance",
+    description:
+      "Connect climate SMEs with investors and funding opportunities",
   },
   {
     icon: Lightbulb,
-    title: 'Accelerate Innovation',
-    description: 'Support breakthrough climate solutions across Africa',
+    title: "Accelerate Innovation",
+    description: "Support breakthrough climate solutions across Africa",
   },
   {
     icon: Scale,
-    title: 'Influence Policy',
-    description: 'Shape climate-friendly policies and regulations',
+    title: "Influence Policy",
+    description: "Shape climate-friendly policies and regulations",
   },
   {
     icon: Users,
-    title: 'Foster Collaboration',
-    description: 'Build partnerships across sectors and regions',
+    title: "Foster Collaboration",
+    description: "Build partnerships across sectors and regions",
   },
   {
     icon: BarChart3,
-    title: 'Document Impact',
-    description: 'Track and measure climate and economic outcomes',
+    title: "Document Impact",
+    description: "Track and measure climate and economic outcomes",
+  },
+  {
+    icon: BookOpen,
+    title: "Build Capacity",
+    description: "Provide training and knowledge sharing programs",
   },
 ];
 
-function AnimatedObjectiveCard({ 
-  objective, 
-  index 
-}: { 
-  objective: Objective; 
+function AnimatedObjectiveCard({
+  objective,
+  index,
+}: {
+  objective: Objective;
   index: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -73,7 +80,7 @@ function AnimatedObjectiveCard({
       opacity: 0,
       y: 40,
       rotateY: -15,
-      transformStyle: 'preserve-3d',
+      transformStyle: "preserve-3d",
     });
 
     if (iconRef.current) {
@@ -84,24 +91,20 @@ function AnimatedObjectiveCard({
     }
 
     // Create scroll trigger animation
-    tl.to(
-      cardRef.current,
-      {
-        opacity: 1,
-        y: 0,
-        rotateY: 0,
-        duration: 0.7,
-        ease: 'power2.out',
-        delay: index * 0.12,
-      }
-    )
-    .to(
+    tl.to(cardRef.current, {
+      opacity: 1,
+      y: 0,
+      rotateY: 0,
+      duration: 0.7,
+      ease: "power2.out",
+      delay: index * 0.12,
+    }).to(
       iconRef.current,
       {
         scale: 1,
         rotateZ: 0,
         duration: 0.6,
-        ease: 'elastic.out(1, 0.6)',
+        ease: "elastic.out(1, 0.6)",
       },
       0.2
     );
@@ -129,7 +132,7 @@ function AnimatedObjectiveCard({
     >
       {/* Animated background gradient on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-      
+
       {/* Glow effect */}
       <div className="absolute -inset-0.5 bg-gradient-to-r from-green-200 to-green-100 rounded-2xl opacity-0 blur group-hover:opacity-30 transition-opacity duration-300 -z-10" />
 
@@ -160,7 +163,9 @@ function AnimatedObjectiveCard({
   );
 }
 
-export function AboutSection({ objectives = defaultObjectives }: AboutSectionProps) {
+export function AboutSection({
+  objectives = defaultObjectives,
+}: AboutSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
@@ -179,10 +184,10 @@ export function AboutSection({ objectives = defaultObjectives }: AboutSectionPro
           y: 0,
           duration: 0.8,
           stagger: 0.05,
-          ease: 'power2.out',
+          ease: "power2.out",
           scrollTrigger: {
             trigger: headingRef.current,
-            start: 'top 80%',
+            start: "top 80%",
             once: true,
           },
         }
@@ -199,10 +204,10 @@ export function AboutSection({ objectives = defaultObjectives }: AboutSectionPro
           x: 0,
           duration: 0.7,
           stagger: 0.1,
-          ease: 'power2.out',
+          ease: "power2.out",
           scrollTrigger: {
             trigger: descRef.current,
-            start: 'top 80%',
+            start: "top 80%",
             once: true,
           },
         }
@@ -226,7 +231,9 @@ export function AboutSection({ objectives = defaultObjectives }: AboutSectionPro
         <div className="mb-12 sm:mb-16 md:mb-20">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-1 w-12 bg-green-600 rounded-full" />
-            <span className="text-sm font-semibold text-green-600 uppercase tracking-wider">Our Mission</span>
+            <span className="text-sm font-semibold text-green-600 uppercase tracking-wider">
+              Our Mission
+            </span>
           </div>
         </div>
 
@@ -240,27 +247,60 @@ export function AboutSection({ objectives = defaultObjectives }: AboutSectionPro
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 leading-tight"
               >
                 <span className="block">Building Africa&apos;s</span>
-                <span className="block bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">Climate Future</span>
+                <span className="block bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
+                  Climate Future
+                </span>
               </h2>
             </div>
 
             <div ref={descRef} className="space-y-4 sm:space-y-6">
               <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed font-light">
-                The Africa Climate Platform is a comprehensive ecosystem designed to accelerate climate action across the continent. We bring together innovators, investors, and partners to create lasting impact through five core objectives.
+                The Kenya Climate Innovation Center (KCIC) is a comprehensive
+                ecosystem designed to accelerate climate action across Africa.
+                We bring together innovators, investors, and partners to create
+                lasting impact through our strategic pillars.
               </p>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed font-light">
-                By mobilizing resources, fostering innovation, and building strategic partnerships, we&rsquo;re creating a sustainable future for Africa&rsquo;s climate economy.
+                With over 12,000 enterprises supported, $55M mobilized in
+                climate finance, and engagement in 10+ African countries,
+                we&rsquo;re creating a sustainable future for Africa&rsquo;s
+                climate economy through the KCIC Revolving Fund and strategic
+                partnerships.
               </p>
-              
+
               {/* Stat highlights */}
               <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-gray-200">
                 <div>
-                  <div className="text-2xl sm:text-3xl font-bold text-green-600">$20M</div>
-                  <p className="text-xs sm:text-sm text-gray-600">Fund Target</p>
+                  <div className="text-2xl sm:text-3xl font-bold text-green-600">
+                    100,000
+                  </div>
+                  <p className="text-xs sm:text-sm text-gray-600">
+                    Green Jobs Created
+                  </p>
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-bold text-green-600">300+</div>
-                  <p className="text-xs sm:text-sm text-gray-600">SMEs Supported</p>
+                  <div className="text-2xl sm:text-3xl font-bold text-green-600">
+                    1.2M
+                  </div>
+                  <p className="text-xs sm:text-sm text-gray-600">
+                    Tonnes of CO₂ Mitigated
+                  </p>
+                </div>
+                <div>
+                  <div className="text-2xl sm:text-3xl font-bold text-green-600">
+                    67,500
+                  </div>
+                  <p className="text-xs sm:text-sm text-gray-600">
+                    Customers Reached
+                  </p>
+                </div>
+                <div>
+                  <div className="text-2xl sm:text-3xl font-bold text-green-600">
+                    60
+                  </div>
+                  <p className="text-xs sm:text-sm text-gray-600">
+                    New Collaborations
+                  </p>
                 </div>
               </div>
             </div>
@@ -269,7 +309,7 @@ export function AboutSection({ objectives = defaultObjectives }: AboutSectionPro
           {/* Right side: Objective cards with enhanced grid */}
           <div
             ref={cardGridRef}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:auto-rows-max"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:auto-rows-max"
           >
             {objectives.map((objective, index) => (
               <AnimatedObjectiveCard

@@ -34,25 +34,26 @@ const structuredData = {
 export default function HomePage() {
   const fundStats = [
     {
-      value: 20,
+      value: 12000,
+      suffix: "+",
+      label: "Enterprises supported across Africa",
+    },
+    {
+      value: 33,
+      prefix: "$",
+      suffix: "M USD",
+      label: "leveraged to supported enterprises",
+    },
+    {
+      value: 80,
+      suffix: "%",
+      label: "commercialization rate of supported enterprises",
+    },
+    {
+      value: 55,
       prefix: "$",
       suffix: "M",
-      label: "Fund Target",
-    },
-    {
-      value: 300,
-      suffix: "+",
-      label: "SMEs Supported",
-    },
-    {
-      value: 10000,
-      suffix: "+",
-      label: "Jobs Created",
-    },
-    {
-      value: 500000,
-      suffix: "+",
-      label: "tCO₂e Reduced",
+      label: "mobilized in climate finance across Africa",
     },
   ];
 
